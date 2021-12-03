@@ -21,11 +21,11 @@ public class Pelicula {
     @XmlElement
     private int rating;
     @XmlElement
-    private String dateRegister;
+    private String fechaRegistro;
     @XmlElement
-    private String dateUpdate;
+    private String fechaActualizacion;
     @XmlElement
-    private int status;
+    private int estado;
     @XmlElement
     private int categoria;
 
@@ -34,15 +34,15 @@ public class Pelicula {
     }
 
     public Pelicula(int id, String titulo, String descripcion, String sinopsis, int
-            rating, String dateRegister, String dateUpdate, int status, int categoria) {
+            rating, String fechaRegistro, String fechaActualizacion, int estado, int categoria) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.sinopsis = sinopsis;
         this.rating = rating;
-        this.dateRegister = dateRegister;
-        this.dateUpdate = dateUpdate;
-        this.status = status;
+        this.fechaRegistro = fechaRegistro;
+        this.fechaActualizacion = fechaActualizacion;
+        this.estado = estado;
         this.categoria = categoria;
     }
 
@@ -86,28 +86,28 @@ public class Pelicula {
         this.rating = rating;
     }
 
-    public String getdateRegister() {
-        return dateRegister;
+    public String getFechaRegistro() {
+        return fechaRegistro;
     }
 
-    public void setdateRegister(String dateRegister) {
-        this.dateRegister = dateRegister;
+    public void setFechaRegistro(String fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
 
-    public String getdateUpdate() {
-        return dateUpdate;
+    public String getFechaActualizacion() {
+        return fechaActualizacion;
     }
 
-    public void setdateUpdate(String dateUpdate) {
-        this.dateUpdate = dateUpdate;
+    public void setFechaActualizacion(String fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
     }
 
-    public int getstatus() {
-        return status;
+    public int getEstado() {
+        return estado;
     }
 
-    public void setstatus(int status) {
-        this.status = status;
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 
     public int getCategoria() {
@@ -126,9 +126,9 @@ public class Pelicula {
                 ", descripcion='" + descripcion + '\'' +
                 ", sinopsis='" + sinopsis + '\'' +
                 ", rating=" + rating +
-                ", dateRegister='" + dateRegister + '\'' +
-                ", dateUpdate='" + dateUpdate + '\'' +
-                ", status=" + status +
+                ", fechaRegistro='" + fechaRegistro + '\'' +
+                ", fechaActualizacion='" + fechaActualizacion + '\'' +
+                ", estado=" + estado +
                 ", categoria=" + categoria +
                 '}';
     }

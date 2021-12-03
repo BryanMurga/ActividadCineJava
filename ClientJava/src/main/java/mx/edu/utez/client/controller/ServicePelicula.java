@@ -61,12 +61,12 @@ public class ServicePelicula {
         String descripcion = formParams.get("descripcion").get(0);
         String sinopsis = formParams.get("sinopsis").get(0);
         int rating = Integer.parseInt(formParams.get("rating").get(0));
-        String dateRegister = formParams.get("dateRegister").get(0);
-        String dateUpdate = formParams.get("dateUpdate").get(0);
-        int status = Integer.parseInt(formParams.get("status").get(0));
+        String fechaRegistro = formParams.get("fechaRegistro").get(0);
+        String fechaActualizacion = formParams.get("fechaActualizacion").get(0);
+        int estado = Integer.parseInt(formParams.get("estado").get(0));
         int categoria = Integer.parseInt(formParams.get("categoria").get(0));
 
-        Pelicula pelicula = new Pelicula(id, titulo,descripcion, sinopsis,rating,dateRegister, dateUpdate,status, categoria);
+        Pelicula pelicula = new Pelicula(id, titulo,descripcion, sinopsis,rating,fechaRegistro, fechaActualizacion,estado, categoria);
         System.out.println(pelicula);
         return pelicula;
     }

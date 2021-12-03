@@ -29,9 +29,9 @@ public class PeliculaDao {
                 pelicula.setDescripcion(rs.getString("descripcion"));
                 pelicula.setSinopsis(rs.getString("sinopsis"));
                 pelicula.setRating(rs.getInt("rating"));
-                pelicula.setdateRegister(rs.getString("dateRegister"));
-                pelicula.setdateUpdate(rs.getString("dateUpdate"));
-                pelicula.setstatus(rs.getInt("estado"));
+                pelicula.setFechaRegistro(rs.getString("fechaRegistro"));
+                pelicula.setFechaActualizacion(rs.getString("fechaActualizacion"));
+                pelicula.setEstado(rs.getInt("estado"));
                 pelicula.setCategoria(rs.getInt("categoria"));
                 listPelicula.add(pelicula);
             }
@@ -60,9 +60,9 @@ public class PeliculaDao {
                 pelicula.setDescripcion(rs.getString("descripcion"));
                 pelicula.setSinopsis(rs.getString("sinopsis"));
                 pelicula.setRating(rs.getInt("rating"));
-                pelicula.setdateRegister(rs.getString("dateRegister"));
-                pelicula.setdateUpdate(rs.getString("dateUpdate"));
-                pelicula.setstatus(rs.getInt("status"));
+                pelicula.setFechaRegistro(rs.getString("fechaRegistro"));
+                pelicula.setFechaActualizacion(rs.getString("fechaActualizacion"));
+                pelicula.setEstado(rs.getInt("estado"));
                 pelicula.setCategoria(rs.getInt("categoria"));
 
             }
@@ -80,28 +80,28 @@ public class PeliculaDao {
         try{
             con = ConnectionMysql.getConnection();
             if(isCreate){
-                cstm = con.prepareCall("INSERT INTO pelicula (id,titulo, descripcion, sinopsis, rating, dateRegister, dateUpdate, status, categoria)VALUES(?,?,?,?,?,?,?,?,?);");
+                cstm = con.prepareCall("INSERT INTO pelicula (id,titulo, descripcion, sinopsis, rating, fechaRegistro, fechaActualizacion, estado, categoria)VALUES(?,?,?,?,?,?,?,?,?);");
 
                 cstm.setInt(1, pelicula.getId());
                 cstm.setString(2, pelicula.getTitulo());
                 cstm.setString(3, pelicula.getDescripcion());
                 cstm.setString(4, pelicula.getSinopsis());
                 cstm.setInt(5, pelicula.getRating());
-                cstm.setString(6, pelicula.getdateRegister());
-                cstm.setString(7, pelicula.getdateUpdate());
-                cstm.setInt(8,pelicula.getstatus());
+                cstm.setString(6, pelicula.getFechaRegistro());
+                cstm.setString(7, pelicula.getFechaActualizacion());
+                cstm.setInt(8,pelicula.getEstado());
                 cstm.setInt(9,pelicula.getCategoria());
 
             } else {
-                cstm = con.prepareCall("UPDATE pelicula SET titulo = ?, descripcion = ?, sinopsis = ?, rating = ?, dateRegister = ?, dateUpdate = ?, status = ?, categoria = ? WHERE id = ?;");
+                cstm = con.prepareCall("UPDATE pelicula SET titulo = ?, descripcion = ?, sinopsis = ?, rating = ?, fechaRegistro = ?, fechaActualizacion = ?, estado = ?, categoria = ? WHERE id = ?;");
 
                 cstm.setString(1, pelicula.getTitulo());
                 cstm.setString(2, pelicula.getDescripcion());
                 cstm.setString(3, pelicula.getSinopsis());
                 cstm.setInt(4, pelicula.getRating());
-                cstm.setString(5, pelicula.getdateRegister());
-                cstm.setString(6, pelicula.getdateUpdate());
-                cstm.setInt(7,pelicula.getstatus());
+                cstm.setString(5, pelicula.getFechaRegistro());
+                cstm.setString(6, pelicula.getFechaActualizacion());
+                cstm.setInt(7,pelicula.getEstado());
                 cstm.setInt(8,pelicula.getCategoria());
             }
             flag = cstm.executeUpdate() == 1;
